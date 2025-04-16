@@ -13,8 +13,9 @@ import adminRoute from "./routes/adminRoute.js";
 
 //app config
 const app= express();
-const port =4000
-const allowedOrigins = ["http://localhost:5173","http://localhost:5174","http://localhost:4000"]; // Adjust based on your frontend URL
+const port =process.env.port || 4000;
+const allowedOrigins = ["http://localhost:5173","http://localhost:5174","http://localhost:4000","https://cravin-frontend.vercel.app", "https://fantastic-twilight-c86fc4.netlify.app", ];
+
 // middleware
 app.use(express.json())
 app.use(cors({
@@ -36,7 +37,7 @@ app.use("/api/admin", adminRoute);
 
 
 app.get("/",(req,res)=>{
-    res.send("API Working")
+    res.send("CravIn backend is live 🚀")
 })
 
 app.listen(port,()=>{
