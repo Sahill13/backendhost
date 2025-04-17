@@ -19,7 +19,7 @@ const allowedOrigins = ["http://localhost:5173","http://localhost:5174","http://
 // middleware
 app.use(express.json())
 app.use(cors({
-    origin: allowedOrigins,
+    origin: '*',
     credentials: true,
 }));
 
